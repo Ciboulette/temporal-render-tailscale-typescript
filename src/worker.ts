@@ -10,7 +10,7 @@ async function run() {
     activities,
     taskQueue: "hello-world",
     connection: await NativeConnection.create({
-      address: "10.202.63.38",
+      address: "TEMPORAL_FRONTEND_IP_ADDRESS",
     }),
   });
   // Worker connects to localhost by default and uses console.error for logging.

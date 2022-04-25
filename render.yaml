@@ -265,34 +265,6 @@ services:
           name: temporal-frontend
           type: pserv
           property: host
-  - type: web
-    repo: https://github.com/render-examples/sample-temporal-app
-    name: app-workflow-trigger
-    plan: Starter
-    region: frankfurt
-    env: go
-    buildCommand: go build start/main.go
-    startCommand: ./main
-    envVars:
-      - key: TEMPORAL_CLUSTER_HOST
-        fromService:
-          name: temporal-frontend
-          type: pserv
-          property: host
-  - type: worker
-    repo: https://github.com/render-examples/sample-temporal-app
-    name: app-worker
-    plan: Starter
-    region: frankfurt
-    env: go
-    buildCommand: go build worker/main.go
-    startCommand: ./main
-    envVars:
-      - key: TEMPORAL_CLUSTER_HOST
-        fromService:
-          name: temporal-frontend
-          type: pserv
-          property: host
   - type: pserv
     name: render-subnet-router
     plan: Starter

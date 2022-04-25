@@ -15,7 +15,6 @@ COPY . .
 RUN npm run build
 
 
-
 FROM debian:stable AS tailscale
 
 RUN apt update && apt install -y ca-certificates wget
@@ -52,5 +51,4 @@ RUN mkdir -p /var/run && ln -s /tmp/tailscale /var/run/tailscale && \
 
 # Configure and document the service HTTP port.
 
-# ENTRYPOINT ["/var/runtime/bootstrap"]
-CMD ["node", "lib/worker.js"]
+ENTRYPOINT ["/var/runtime/bootstrap"]

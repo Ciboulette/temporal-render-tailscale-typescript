@@ -6,7 +6,7 @@ async function run() {
   const connection = new Connection({
     // // Connect to localhost with default ConnectionOptions.
     // // In production, pass options to the Connection constructor to configure TLS and other settings:
-    address: "10.202.63.38", // as provisioned
+    address: "TEMPORAL_FRONTEND_IP_ADDRESS", // as provisioned
     // tls: {} // as provisioned
   });
 
